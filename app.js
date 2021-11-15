@@ -65,13 +65,14 @@ function handleRangeChange(event) {
 }
 
 function handleModeClick(event) {
+  stopPainting;
   if (filling === true) {
-    painting = true;
+    // painting = true;
     filling = false;
     fillIcon.classList.remove(HIDDEN_CLASSNAME);
     brushIcon.classList.add(HIDDEN_CLASSNAME);
   } else {
-    painting = false;
+    // painting = false;
     filling = true;
     fillIcon.classList.add(HIDDEN_CLASSNAME);
     brushIcon.classList.remove(HIDDEN_CLASSNAME);
