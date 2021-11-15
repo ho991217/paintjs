@@ -6,28 +6,45 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  padding-top: 5vh;
+  justify-content: center;
+  position: relative;
+  padding-top: 10px;
+}
+
+.hidden {
+  font-size: 0px;
 }
 
 .canvas {
-  width: 70vh;
-  height: 70vh;
+  width: 700px;
+  height: 700px;
   background-color: white;
   border-radius: 3%;
   box-shadow: var(--default-shadow);
+  transition: 0.4s;
 }
 
 .controls {
-  margin: 4vh;
+  position: relative;
+  right: -20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white;
+  padding: 15px 0px;
+  border-radius: 15px;
+  box-shadow: var(--default-shadow);
+  transition: 0.4s;
 }
 
 .controls .controls__btns {
-  margin-bottom: 4vh;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .controls__btns button {
@@ -43,13 +60,19 @@ body {
   font-weight: 400;
 }
 
+.controls__range input {
+  width: 90px;
+  height: 90px;
+  transform: rotate(-90deg);
+}
+
+.controls__btns button:first-child {
+  margin-bottom: 5px;
+}
+
 .controls__btns button:active {
   transform: scale(0.98);
   box-shadow: 0 2px 3px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.controls .controls__colors {
-  display: flex;
 }
 
 .controls__colors .controls__color {
@@ -58,4 +81,31 @@ body {
   box-shadow: var(--default-shadow);
   cursor: pointer;
   border-radius: 50%;
+  margin-bottom: 5px;
+  transition: 0.25s;
+}
+
+.controls__color:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 10px rgba(50, 50, 93, 0.11), 0 3px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.2s;
+}
+
+.controls__color:active {
+  transform: scale(1);
+  box-shadow: none;
+  transition: 0.05s;
+}
+
+#pick-color {
+  border: none;
+  width: 60px;
+  height: 60px;
+  /* box-shadow: var(--default-shadow); */
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.controls .controls__range {
+  margin-bottom: 15px;
 }
